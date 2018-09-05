@@ -14,6 +14,8 @@ import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { ItemComponent } from './pages/item/item.component';
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
-    ItemComponent
+    ItemComponent,
+  
+    
   ],
   imports: [
     BrowserModule,

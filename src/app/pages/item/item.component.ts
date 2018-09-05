@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurriculumService } from '../../services/curriculum.service';
 
 @Component({
   selector: 'app-item',

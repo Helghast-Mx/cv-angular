@@ -7,3 +7,5 @@ export interface infoPagina {
     equipo_trabajo?: any[];
 
 }
+
+

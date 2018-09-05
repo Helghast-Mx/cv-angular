@@ -1,5 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+/* svg animation */
+
+svg path,
+svg rect {
+    fill: black;
+}
+
+.circular {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 200px;
+    width: 50px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    border-radius: 20%;
+}
+
+.circular-cover {
+    border-radius: 30%;
+}
+
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -37,4 +57,10 @@
 .fadeIn {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
+}
+
+.imgs {
+    width: 320px;
+    height: 411px;
+    -webkit-filter: sepia(50%);
 }

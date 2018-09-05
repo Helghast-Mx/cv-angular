@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoPaginaService } from '../../services/info-pagina.service';
+import { CurriculumService } from '../../services/curriculum.service';
 
 @Component({
   selector: 'app-portafolio',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortafolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _serviceAbout : InfoPaginaService,
+              public _infoPrinciServ : CurriculumService) { }
 
   ngOnInit() {
   }

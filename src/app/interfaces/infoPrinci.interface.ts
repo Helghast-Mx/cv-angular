@@ -1,0 +1,8 @@
+
+
+ export interface InfoPri {
+  categoria?: string;
+  cod?: string;
+  titulo?: string;
+  url?: string;
+}
