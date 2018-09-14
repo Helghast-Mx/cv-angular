@@ -12,8 +12,14 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ItemComponent } from './pages/item/item.component';
 
+import { LoadingComponent } from './shared/loading/loading.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { ExperienciaComponent } from './pages/experiencia/experiencia.component';
+import { SoftwareComponent } from './pages/software/software.component';
+// Graficas
+import { ChartsModule } from 'ng2-charts';
+import { EducacionComponent } from './pages/educacion/educacion.component';
 
 
 @NgModule({
@@ -23,14 +29,17 @@ import { ItemComponent } from './pages/item/item.component';
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
-    ItemComponent,
-  
-    
+    LoadingComponent,
+    InicioComponent,
+    ExperienciaComponent,
+    SoftwareComponent,
+    EducacionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

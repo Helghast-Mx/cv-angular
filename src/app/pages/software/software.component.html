@@ -1,0 +1,15 @@
+<app-loading *ngIf="!cargada"></app-loading>
+<div>
+    <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [colors]="chartColors" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <!-- <button (click)="randomize()">Update</button> -->
+</div>
+
+<div style="display: block" class="margin-arriba">
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+</div>
+
+<!-- <div *ngIf="chart">
+    <canvas id="canvas">{{ chart }}</canvas>
+</div> -->

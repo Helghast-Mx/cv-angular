@@ -9,9 +9,15 @@ import { InfoPaginaService } from '../../services/info-pagina.service';
 export class FooterComponent implements OnInit {
 
   anio:number=new Date().getFullYear();
+  dataPers:any = {};
+
   constructor(public _infoService : InfoPaginaService) { }
 
   ngOnInit() {
+    this._infoService.getInfoPersonal()
+    .subscribe( (dataPersonal:any)=>{
+this.dataPers= dataPersonal;
+    }  )
   }
 
 }

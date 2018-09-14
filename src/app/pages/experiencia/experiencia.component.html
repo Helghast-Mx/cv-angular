@@ -1,0 +1,12 @@
+<app-loading *ngIf="!cargada"></app-loading>
+<div *ngFor="let exp of _xp.experiencia" class="card border-dark mb-3" style="max-width: 60rem;">
+    <div class="card-header">
+        <h5>{{exp.titulo}} </h5>
+    </div>
+    <small class="card-header">{{exp.ciclo}}</small>
+    <div class="card-body text-dark">
+        <h6 class="card-title"> - {{exp.empresa}}</h6>
+        <p class="card-text"> - {{exp.proyecto1}}</p>
+        <p class="card-text"> - {{exp.proyecto2}}</p>
+    </div>
+</div>

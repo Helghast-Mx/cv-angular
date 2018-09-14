@@ -2,14 +2,15 @@
     <div class="ae-grid ae-grid--collapse">
         <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
             <ul class="rk-menu rk-footer-menu">
-                <li class="rk-menu__item"><a href="about.html" class="rk-menu__link">About</a>
+                <li class="rk-menu__item"><a [routerLink]="['about']" class="rk-menu__link">About</a>
                 </li>
-                <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Docs</a>
+                <li class="rk-menu__item">
+                    <a [routerLink]="['indice']" class="rk-menu__link">Indice</a>
                 </li>
-                <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact</a>
+                <li class="rk-menu__item"><a href="" data-toggle="modal" data-target="#exampleModal" class="rk-menu__link">Contact</a>
                 </li>
             </ul>
-            <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{anio}} URKU PORTFOLIO </span>All Right Reserved.</p>
+            <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{anio}}  </span>All Right Reserved.</p>
         </div>
         <div class="ae-grid__item item-lg-4 au-xs-ta-center">
             <a target="blank" [href]="_infoService.info.facebook" class="rk-social-btn ">
@@ -32,7 +33,47 @@
         <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
             <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> 
                 <a href="mailto:{{_infoService.info.email}}" class="rk-dark-color ">{{_infoService.info.email}} </a></span></p>
-            <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a></p>
+            <!-- <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a></p> -->
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contacto: </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">Nombre:</th>
+                                <td>{{dataPers.nombre}}</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Correo:</th>
+                                <td>{{dataPers.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Telefono: </th>
+                                <td colspan="2">{{dataPers.Celular}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 </footer>
