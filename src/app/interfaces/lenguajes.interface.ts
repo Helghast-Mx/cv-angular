@@ -6,3 +6,13 @@
 //   Lenguaje5: string;
 // }
 
+
+export interface InglesInter {
+  Ingles: string;
+  ReadPercent: number;
+  Reading: string;
+  Speaking: string;
+  SpeakingPercen: number;
+  Writing: string;
+  WritingPercent: number;
+}

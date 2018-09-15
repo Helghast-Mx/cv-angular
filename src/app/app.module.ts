@@ -22,6 +22,7 @@ import { ChartsModule } from 'ng2-charts';
 import { EducacionComponent } from './pages/educacion/educacion.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { EducacionComponent } from './pages/educacion/educacion.component';
     ExperienciaComponent,
     SoftwareComponent,
     EducacionComponent,
+ 
   ],
   imports: [
     BrowserModule,

@@ -11,11 +11,13 @@ export class InfoPaginaService {
   cargada = false;
   equipo:fireDatos [] = [];
 queryBase:string = "https://angular-portafolio-885e3.firebaseio.com/";
+
   constructor(private http: HttpClient) { 
 
     this.cargarInfo()
     this.cargarEquipo();
     this.getInfoPersonal();
+    this.getIdiomas();
   }
   
   private cargarInfo ()  {
@@ -42,6 +44,10 @@ queryBase:string = "https://angular-portafolio-885e3.firebaseio.com/";
   getInfoPersonal (){
 
     return this.http.get(`${this.queryBase}CV/DatosPersonales.json`)
+  }
+
+  getIdiomas(){
+  return  this.http.get(`${this.queryBase}CV/Idiomas.json`)
   }
 
 }

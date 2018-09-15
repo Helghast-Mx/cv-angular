@@ -10,6 +10,7 @@ import { ExperienciaComponent } from "./pages/experiencia/experiencia.component"
 import { SoftwareComponent } from './pages/software/software.component';
 import { EducacionComponent } from './pages/educacion/educacion.component';
 
+
     // Modulo encargado de la especificacion de las rutas
     // La idea de hacerlo mediante un modulo es para que el app.module.ts no quede tan cargado
 
@@ -22,6 +23,7 @@ import { EducacionComponent } from './pages/educacion/educacion.component';
     {path:'software',component:SoftwareComponent},
     {path:'educacion',component:EducacionComponent},
     {path:'about',component:AboutComponent},
+    
     
     // cualquier otro path sera redireccionado al portafolio
     {path:'**', pathMatch:'full', redirectTo:'inicio'},

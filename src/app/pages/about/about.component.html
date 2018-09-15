@@ -1,31 +1,33 @@
-<div class="ae-grid ae-grid--collapse">
-    <div *ngFor="let persona of _serviceAbout.equipo" class="animated fadeIn ae-grid__item item-lg-4">
-        <!-- Image -->
-        <img [src]="persona.url" alt="" class="imgs circular au-mb-3">
+<div class="animated fadeIn">
+    <div class="ae-grid ae-grid--collapse">
+        <div *ngFor="let persona of _serviceAbout.equipo" class="animated fadeIn ae-grid__item item-lg-4">
+            <!-- Image -->
+            <img [src]="persona.url" alt="" class="imgs circular au-mb-3">
+        </div>
+        <app-loading *ngIf="!cargada"></app-loading>
+        <div align="center" *ngFor="let persona of _serviceAbout.equipo" class="ae-grid__item item-lg-4 au-lg-ptp-1 item-lg--offset-1">
+            <!-- Text content -->
+            <h5 class="">{{persona.nombre}}</h5>
+            <p class="">{{persona.subtitulo}}</p>
+            <p class="">{{persona.frase}}</p>
+            <a href="#0" class="">{{persona.twitter}}</a>
+            <hr>
+            <button aling="center" [routerLink]="['/indice']" class="btn btn-primary btn-round btn-default">Regresar</button>
+        </div>
     </div>
-    <app-loading *ngIf="!cargada"></app-loading>
-    <div align="center" *ngFor="let persona of _serviceAbout.equipo" class="ae-grid__item item-lg-4 au-lg-ptp-1 item-lg--offset-1">
-        <!-- Text content -->
-        <h5 class="">{{persona.nombre}}</h5>
-        <p class="">{{persona.subtitulo}}</p>
-        <p class="">{{persona.frase}}</p>
-        <a href="#0" class="">{{persona.twitter}}</a>
-        <hr>
-        <button aling="center" [routerLink]="['/home']" class="btn btn-primary btn-round btn-default">Regresar</button>
+
+    <div class="ae-grid au-pt-2 ">
+        <div class="ae-grid__item item-lg-8 item-lg--offset-2">
+            <h4 class="ae-u-bolder">Acerca de mi</h4>
+            <p>{{descripcion.descripcion}}
+            </p>
+            <hr>
+
+        </div>
+
     </div>
+
 </div>
-
-<div class="ae-grid au-pt-2 ">
-    <div class="ae-grid__item item-lg-8 item-lg--offset-2">
-        <h4 class="ae-u-bolder">Acerca de mi</h4>
-        <p>{{descripcion.descripcion}}
-        </p>
-        <hr>
-
-    </div>
-
-</div>
-
 <!-- <div class="ae-grid ae-grid--alt au-xs-ptp-1">
     <div class="ae-grid__item--alt item-lg-4">
         <h6 class="ae-u-boldest">About Us</h6>

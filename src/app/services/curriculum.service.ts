@@ -18,6 +18,7 @@ export class CurriculumService {
   experiencia: ExprienceInte [] = [];
   lenguajes:any [] = [];
   datosEdu:eduIntf [] = [];
+  indiceFiltrado : any [] = [];
   constructor(public http:HttpClient) {
     this.getIndice();
     this.getDatosPersonales();

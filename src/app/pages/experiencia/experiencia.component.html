@@ -1,9 +1,14 @@
 <app-loading *ngIf="!cargada"></app-loading>
-<div *ngFor="let exp of _xp.experiencia" class="card border-dark mb-3" style="max-width: 60rem;">
+<div *ngFor="let exp of _xp.experiencia" class="animated fadeIn card border-dark mb-3" style="max-width: 60rem;">
     <div class="card-header">
         <h5>{{exp.titulo}} </h5>
     </div>
     <small class="card-header">{{exp.ciclo}}</small>
+    <table class="table table-bordered">
+
+        <td><small>{{exp.descripcion}}</small></td>
+
+    </table>
     <div class="card-body text-dark">
         <h6 class="card-title"> - {{exp.empresa}}</h6>
         <p class="card-text"> - {{exp.proyecto1}}</p>

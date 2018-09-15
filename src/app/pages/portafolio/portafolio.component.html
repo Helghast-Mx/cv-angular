@@ -55,7 +55,7 @@
         </div>
     </a>
 
-    <a [routerLink]="['/']" class="rk-item ae-masonry__item">
+    <a [routerLink]="['/software']" class="rk-item ae-masonry__item">
         <img src="assets/curriculum/project-5.jpg" class="circular-cover">
 
         <div class="item-meta">
@@ -64,7 +64,7 @@
         </div>
     </a>
 
-    <a [routerLink]="['/']" class="rk-item ae-masonry__item">
+    <a href="" data-toggle="modal" data-target="#inglesModal" class="rk-item ae-masonry__item">
         <img src="assets/curriculum/project-6.jpg" class="circular-cover">
 
         <div class="item-meta">
@@ -73,7 +73,7 @@
         </div>
     </a>
 
-    <a [routerLink]="['/']" class="rk-item ae-masonry__item">
+    <a [routerLink]="['/indice']" class="rk-item ae-masonry__item">
         <img src="assets/curriculum/project-7.jpg" class="circular-cover">
 
         <div class="item-meta">
@@ -84,4 +84,57 @@
 
 
 
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="inglesModal" tabindex="-1" role="dialog" aria-labelledby="inglesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inglesModalLabel">Idiomas: </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{idiomas.Ingles.Writing}}</th>
+                            <th scope="col">{{idiomas.Ingles.Speaking}}</th>
+                            <th scope="col">{{idiomas.Ingles.Reading}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{idiomas.Ingles.idioma}}</th>
+                            <td>{{idiomas.Ingles.WritingPercent}}%</td>
+                            <td>{{idiomas.Ingles.SpeakingPercen}}%</td>
+                            <td>{{idiomas.Ingles.ReadPercent}}%</td>
+                        </tr>
+                        <!-- <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr> -->
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
 </div>

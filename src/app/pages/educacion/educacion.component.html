@@ -1,24 +1,28 @@
 <app-loading *ngIf="!cargada"></app-loading>
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">{{dataUni.Carrera}}</h1>
-        <p class="lead">{{dataUni.Escuela}}</p>
-        <small>{{dataUni.Cursado}}</small>
-        <p><small>{{dataUni.Status}}</small></p>
-    </div>
-</div>
-<hr class="hr">
-<h2 align=center> Cursos </h2>
+<div class="animated fadeIn">
 
-<div *ngFor="let curso of dataCursos" class="card border-dark mb-3" style="max-width: 70rem;">
-    <div class="card-header">
-        <h5>{{curso.nomCur}} </h5>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{dataUni.Carrera}}</h1>
+            <p class="lead">{{dataUni.Escuela}}</p>
+            <small>{{dataUni.Cursado}}</small>
+            <p><small>{{dataUni.Status}}</small></p>
+        </div>
     </div>
-    <small class="card-header">{{curso.escImp}}</small>
-    <small class="card-header">{{curso.procss}}</small>
-    <div class="card-body text-dark">
-        <!-- <h6 class="card-title"> - {{curso}}</h6> -->
-        <p class="card-text"> - {{curso.dscCur}}</p>
-        <!-- <p class="card-text"> - {{curso}}</p> -->
+    <hr class="hr">
+    <h2 align=center> Cursos </h2>
+
+    <div *ngFor="let curso of dataCursos" class="card border-dark mb-3" style="max-width: 70rem;">
+        <div class="card-header">
+            <h5>{{curso.nomCur}} </h5>
+        </div>
+        <small class="card-header">{{curso.escImp}}</small>
+        <small class="card-header">{{curso.procss}}</small>
+        <div class="card-body text-dark">
+            <!-- <h6 class="card-title"> - {{curso}}</h6> -->
+            <p class="card-text"> - {{curso.dscCur}}</p>
+            <!-- <p class="card-text"> - {{curso}}</p> -->
+        </div>
     </div>
 </div>

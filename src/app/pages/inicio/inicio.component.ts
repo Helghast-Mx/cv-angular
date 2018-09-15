@@ -8,7 +8,9 @@ import { CurriculumService } from '../../services/curriculum.service';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(public _datosHome : CurriculumService) { }
+  constructor(public _datosHome : CurriculumService) { 
+    _datosHome.getIndice();
+  }
 
   ngOnInit() {
   }
