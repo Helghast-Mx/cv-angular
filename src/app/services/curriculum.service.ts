@@ -11,7 +11,9 @@ import { eduIntf, CursoInt } from '../interfaces/educacion.interfaces';
 export class CurriculumService {
   datosPrincipales: any [] = []; 
   cargada =false;
-  queryBase:string = 'https://angular-portafolio-885e3.firebaseio.com/';
+  changeLenguaje : boolean = false;
+  queryBaseSpan:string = 'https://angular-portafolio-885e3.firebaseio.com/';
+  queryBaseEnglish : string = 'https://cv-english-angular-default-rtdb.firebaseio.com/';
   datosPersonales : any [] = [];
   datosHome: any [] = [];
   educacion: any [] = [];
@@ -20,44 +22,67 @@ export class CurriculumService {
   datosEdu:eduIntf [] = [];
   indiceFiltrado : any [] = [];
   constructor(public http:HttpClient) {
-    this.getIndice();
-    this.getDatosPersonales();
-    this.getDescripcion();
-    this.getExperiencia();
-    this.getLenguajes();
-    this.getEscolaridad();
-    this.getCursos();
+   this.getExperiencia()
    }
 
    getCursos(){
-     return this.http.get(`${this.queryBase}CV/ExpCursos.json`)
+     if(!this.changeLenguaje){
+       return this.http.get(`${this.queryBaseSpan}CV/ExpCursos.json`)
+       
+     }else{
+      return this.http.get(`${this.queryBaseEnglish}CV/ExpCursos.json`)
+     }
    }
 
     getIndice ( ) {
-
-     return this.http.get(`${this.queryBase}curriculum_idx.json`)
+     if(!this.changeLenguaje){
+       return this.http.get(`${this.queryBaseSpan}curriculum_idx.json`)
+       
+      } else{
+        return this.http.get(`${this.queryBaseEnglish}curriculum_idx.json`)
+        
+     }
      
     } 
 
     getEscolaridad () {
-    this.http.get(`${this.queryBase}CV/Educacion.json`)
-    .subscribe(  (datosEduc : eduIntf[]) =>{
-      this.datosEdu = datosEduc; 
+    if(!this.changeLenguaje){
+
+      this.http.get(`${this.queryBaseSpan}CV/Educacion.json`)
+      .subscribe(  (datosEduc : eduIntf[]) =>{
+        this.datosEdu = datosEduc; 
+      } )
+    } else {
       
-    } )
+      this.http.get(`${this.queryBaseEnglish}CV/Educacion.json`)
+      .subscribe(  (datosEduc : eduIntf[]) =>{
+        this.datosEdu = datosEduc; 
+      } )
+    }
     }
 
     getDatosPersonales(  ){
-      this.http.get( `${this.queryBase}CV/DatosPersonales.json` )
-      .subscribe( (resp:any[])=>{
+      if(!this.changeLenguaje){
 
-this.datosPersonales = resp;
-// console.log(this.datosPersonales);
-      } )
+        this.http.get( `${this.queryBaseSpan}CV/DatosPersonales.json` )
+        .subscribe( (resp:any[])=>{
+        this.datosPersonales = resp;
+        } )
+      }else {
+        this.http.get( `${this.queryBaseEnglish}CV/DatosPersonales.json` )
+        .subscribe( (resp:any[])=>{
+        this.datosPersonales = resp;
+        } )
+      }
     }
 
     getDescripcion (){
-     return this.http.get(`${this.queryBase}CV/Descripcion.json`)
+      if(!this.changeLenguaje){
+
+        return this.http.get(`${this.queryBaseSpan}CV/Descripcion.json`)
+      }else{
+        return this.http.get(`${this.queryBaseEnglish}CV/Descripcion.json`)
+      }
       // .subscribe( (resp:any[]) =>{
       //   this.datosHome= resp;
       //   // console.log(resp);
@@ -65,23 +90,42 @@ this.datosPersonales = resp;
     }
 
     getEducacion( ){
-      return this.http.get(`${this.queryBase}CV/Educacion.json`)
+      if(!this.changeLenguaje){
+        return this.http.get(`${this.queryBaseSpan}CV/Educacion.json`)
+      } else {
+        return this.http.get(`${this.queryBaseEnglish}CV/Educacion.json`)
+      }
 //       .subscribe ( (resp:any[])=>{
 // this.educacion = resp;
 //       } )
     }
 
     getExperiencia(){
-      this.http.get(`${this.queryBase}CV/Experiencia.json`)
-      .subscribe( (resp:ExprienceInte[])=> {
-        this.experiencia = resp;
-      } )
+      if(!this.changeLenguaje){
+
+        this.http.get(`${this.queryBaseSpan}CV/Experiencia.json`)
+        .subscribe( (resp:ExprienceInte[])=> {
+          this.experiencia = resp;
+        } )
+      } else {
+        this.http.get(`${this.queryBaseEnglish}CV/Experiencia.json`)
+        .subscribe( (resp:ExprienceInte[])=> {
+          this.experiencia = resp;
+        } )
+      }
     }
 
     getLenguajes(){
-      return this.http.get (`${this.queryBase}/CV/Software.json`);
+      if(!this.changeLenguaje){
+      
+        return this.http.get (`${this.queryBaseSpan}/CV/Software.json`);
+      } else {
+        return this.http.get (`${this.queryBaseEnglish}/CV/Software.json`);
+
+      }
+
      
-// // this.http.get(`${this.queryBase}CV/Software/0.json`)
+// // this.http.get(`${this.queryBaseSpan}CV/Software/0.json`)
 // //       .subscribe( (resp:lenguajes[])=>{
 // //         this.lenguajes = resp;
         

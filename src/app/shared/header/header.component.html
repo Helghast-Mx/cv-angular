@@ -15,12 +15,18 @@
         <h1 class="rk-logo"><a routerLink="">{{_infoService.info.titulo}}<sup>tm</sup></a></h1>
         <nav class="rk-navigation">
             <ul class="rk-menu">
-                <li routerLinkActive="active" class="rk-menu__item">
-                    <a routerLink="inicio" class="rk-menu__link">Inicio</a>
+                <li class="rk-menu__item">
+                    <a class="rk-menu__link"
+                       (click)="cambiarIdioma()" >{{idioma}}</a>
                 </li>
-                <li routerLinkActive="active" class="rk-menu__item">
-                    <a routerLink="indice" class="rk-menu__link">Indice</a>
+                <li routerLinkActive="active" 
+                class="rk-menu__item"
+                *ngFor="let titulo of headerMenu">
+                    <a [routerLink]="[ titulo.ruta ]" 
+                    class="rk-menu__link"
+                    >{{titulo.texto}}</a>
                 </li>
+               
 
                 <!-- <li class="rk-menu__item"><a href="blog.html" class="rk-menu__link">Blog</a>
                 </li>
@@ -33,8 +39,9 @@
                         </ul>
                     </nav>
                 </li> -->
-                <li routerLinkActive="active" class="rk-menu__item">
-                    <a routerLink="about" class="rk-menu__link">About</a>
+                <!-- <li routerLinkActive="active" class="rk-menu__item">
+                    <a routerLink="about" 
+                    class="rk-menu__link">About</a>
                 </li>
 
                 <li routerLinkActive="active" class="rk-menu__item">
@@ -47,7 +54,7 @@
 
                 <li routerLinkActive="active" class="rk-menu__item">
                     <a routerLink="software" class="rk-menu__link">Software</a>
-                </li>
+                </li> -->
             </ul>
             <!-- <div class="rk-search">
                 <input type="text" (keyup.enter)="buscarProducto( txtBuscar.value )" placeholder="Search" id="urku-search" class="rk-search-field" #txtBuscar>

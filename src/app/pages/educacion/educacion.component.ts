@@ -21,7 +21,7 @@ export class EducacionComponent implements OnInit {
     this._eduServ.getCursos()
     .subscribe( (dataCurs:CursoInt[]) =>{
       this.dataCursos = dataCurs;
-      console.log(this.dataCursos);
+      console.log(  ` desde educacion.component `, this.dataCursos )
     } )
     this._eduServ.getEducacion()
     .subscribe( (dataUni:any)  =>{
