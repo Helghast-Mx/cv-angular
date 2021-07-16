@@ -66,6 +66,7 @@ export class CurriculumService {
 
         this.http.get( `${this.queryBaseSpan}CV/DatosPersonales.json` )
         .subscribe( (resp:any[])=>{
+          
         this.datosPersonales = resp;
         } )
       }else {

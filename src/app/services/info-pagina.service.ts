@@ -10,8 +10,9 @@ export class InfoPaginaService {
   info:infoPagina = {};
   cargada = false;
   equipo:fireDatos [] = [];
-queryBase:string = "https://angular-portafolio-885e3.firebaseio.com/";
-
+  queryBase:string = "https://angular-portafolio-885e3.firebaseio.com/";
+  queryBaseEnglish:string = "https://cv-english-angular-default-rtdb.firebaseio.com/"
+  changeLenguaje : boolean = false;
   constructor(private http: HttpClient) { 
 
     this.cargarInfo()
@@ -29,16 +30,21 @@ queryBase:string = "https://angular-portafolio-885e3.firebaseio.com/";
       // console.log(resp.facebook);
     } )
   }
-  private cargarEquipo ( ) {
-    this.http.get('https://angular-portafolio-885e3.firebaseio.com/equipo.json')
-    .subscribe( (resp:any) =>{
+  cargarEquipo ( ) {
+    if(!this.changeLenguaje){
 
-      this.equipo = resp;
-      this.cargada = true;
-
-      // console.log(resp);
-      
-    } )
+      this.http.get(`${ this.queryBase }equipo.json`)
+      .subscribe( (resp:any) =>{
+        this.equipo = resp;
+        this.cargada = true;
+      } )
+    } else {
+      this.http.get(`${ this.queryBaseEnglish }equipo.json`)
+      .subscribe( (resp:any) =>{
+        this.equipo = resp;
+        this.cargada = true;
+      } )
+    }
   }
 
   getInfoPersonal (){

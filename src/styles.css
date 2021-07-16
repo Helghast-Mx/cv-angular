@@ -59,12 +59,6 @@ svg rect {
     animation-name: fadeIn;
 }
 
-.imgs {
-    width: 320px;
-    height: 411px;
-    -webkit-filter: sepia(50%);
-}
-
 .btn {
     display: inline-block;
     font-weight: 400;

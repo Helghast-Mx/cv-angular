@@ -2,7 +2,9 @@
     <div class="ae-grid ae-grid--collapse">
         <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
             <ul class="rk-menu rk-footer-menu">
-                <li class="rk-menu__item"><a [routerLink]="['about']" class="rk-menu__link">About</a>
+                <li class="rk-menu__item"><a class="rk-menu__link" (click)="cambiarIdioma()">{{idioma}}</a>
+                </li>
+                <li class="rk-menu__item"><a [routerLink]="['about']" class="rk-menu__link">Acerca</a>
                 </li>
                 <li class="rk-menu__item">
                     <a [routerLink]="['indice']" class="rk-menu__link">Indice</a>
@@ -60,13 +62,61 @@
                                 <th scope="row">Correo:</th>
                                 <td>{{dataPers.email}}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">Telefono: </th>
                                 <td colspan="2">{{dataPers.Celular}}</td>
 
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
+                    <ul class="social-media-ul">
+                        <li class="social-media ">
+                            <a href="https://www.linkedin.com/in/josseph/" target="blank">
+                            <img src="assets/socialMedia/linkedIn.png" class="">
+                            </a>
+                            
+                        </li>
+
+                        <li class="social-media">
+                            
+                            <a href="https://github.com/Helghast-Mx" target="blank">
+                                <img src="assets/socialMedia/github.png" class="">
+                            </a>
+                        </li>
+
+                        <li class="social-media">
+
+                            
+                            <a href="https://twitter.com/SolisAllan" target="blank">
+                                <img src="assets/socialMedia/twitter.png" class="">
+                            </a>
+
+                        </li>
+
+                        <li class="social-media">
+
+                            <a href="https://wa.me/525541763252/?text=Hola%20Joseph!" target="blank">
+                                <img src="assets/socialMedia/whatsapp.png" class="">
+                            </a>
+                            
+                        </li>
+
+                        <li class="social-media">
+
+                            <a href="https://www.facebook.com/joseph.a.a.solis/" target="blank">
+                                <img src="assets/socialMedia/facebook.png" class="">
+                            </a>
+                            
+                        </li>
+                        <li class="social-media">
+
+                            <a href="https://www.instagram.com/joss_pha/" target="blank">
+                                <img src="assets/socialMedia/instagram.png" class="">
+                            </a>
+                            
+                        </li>
+
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

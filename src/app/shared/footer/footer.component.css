@@ -157,6 +157,83 @@
 .fade:not(.show) {
     opacity: 0;
 }
+@media (min-width: 576px) {
+    
+    .social-media{
+        
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        height: 20px;
+        width: 20px;
+    }
+    .social-media-ul {
+        display: flex;
+        list-style: none;
+        
+    }
+}
+
+@media (max-width: 575px) {
+    
+    .social-media{
+        height: 20px;
+        width: 20px;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        
+    }
+    .social-media-ul {
+        display: flex;
+        list-style: none;
+        
+    }
+}
+@media (max-width: 495px) {
+    
+    .social-media{
+        height: 20px;
+        width: 20px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        
+    }
+    .social-media-ul {
+        display: flex;
+        list-style: none;
+        
+    }
+}
+@media (max-width: 400px) {
+    
+    .social-media{
+        
+        margin-left: .75rem;
+        margin-right: .75rem;
+        margin-top: 10px;
+    }
+    .social-media-ul {
+        display: flex;
+        list-style: none;
+        
+        flex-wrap: wrap;
+    }
+}
+
+/* @media (max-width: 350px) {
+    
+    .social-media{
+        height: 20px;
+        width: 20px;
+        margin-left: .35rem;
+        margin-right: .35rem;
+        
+    }
+    .social-media-ul {
+        display: flex;
+        list-style: none;
+        
+    }
+} */
 
 @media (min-width: 576px) {
     .modal-dialog {

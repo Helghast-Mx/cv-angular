@@ -61,6 +61,7 @@ idiomas:any = {} || undefined;
 img:string = 'assets/curriculum/project-'
   constructor(private _serviceAbout : InfoPaginaService,
               private _cvService : CurriculumService) {
+               
                 this._serviceAbout.getIdiomas()
                 .subscribe(  (data:any) =>{
                 this.idiomas=data;

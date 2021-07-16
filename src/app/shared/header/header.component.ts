@@ -54,9 +54,10 @@ export class HeaderComponent implements OnInit {
   cambiarIdioma(){
     if(this.idiomaChange === false){
       this.idiomaChange = true
+      this._infoService.changeLenguaje = this.idiomaChange;
       this.idioma = "English"
       this.cvService.changeLenguaje = this.idiomaChange;
-      console.log(  ` headerMenu `, this.headerMenu )
+      console.log(  ` idioma en `, this._infoService.changeLenguaje )
       this.headerMenu[0].texto = 'Home'
       this.headerMenu[1].texto = 'Index'
       this.headerMenu[2].texto = 'About Me'
@@ -70,7 +71,10 @@ export class HeaderComponent implements OnInit {
       this.cvService.getLenguajes();
       this.cvService.getEscolaridad();
       this.cvService.getCursos();
+      this._infoService.cargarEquipo();
     } else {
+      this.idiomaChange = false
+      this._infoService.changeLenguaje = this.idiomaChange;
       this.headerMenu[0].texto = 'Inicio'
       this.headerMenu[1].texto = 'Indice'
       this.headerMenu[2].texto = 'Acerca de mi'
@@ -78,7 +82,6 @@ export class HeaderComponent implements OnInit {
       this.headerMenu[4].texto = 'Software'
       this.headerMenu[5].texto = 'Educacion'
       this.idioma = "Español"
-      this.idiomaChange = false
       this.cvService.changeLenguaje = this.idiomaChange;
       this.cvService.getIndice();
       this.cvService.getDatosPersonales();
@@ -87,6 +90,7 @@ export class HeaderComponent implements OnInit {
       this.cvService.getLenguajes();
       this.cvService.getEscolaridad();
       this.cvService.getCursos();
+      this._infoService.cargarEquipo();
 
     }
   }
